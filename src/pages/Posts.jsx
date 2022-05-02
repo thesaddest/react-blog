@@ -12,6 +12,7 @@ import PostList from "../components/PostList";
 import Loader from "../components/UI/Loader/Loader";
 import Pagination from "../components/UI/pagination/Pagination";
 import {useObserver} from "../hooks/useObserver";
+import MySelect from "../components/UI/select/MySelect";
 
 function Posts() {
     const [posts, setPosts] = useState([]);
@@ -26,7 +27,7 @@ function Posts() {
 
     const [fetchPosts, isPostsLoading, postError] = useFetching(async () => {
         const response = await PostService.getAll(limit, page)
-        setPosts([...posts,...response.data])
+        setPosts([...posts, ...response.data])
         const totalCount = response.headers['x-total-count'];
         setTotalPages(getPagesCount(totalCount, limit))
     });
@@ -37,7 +38,7 @@ function Posts() {
 
     useEffect(() => {
         fetchPosts()
-    }, [page])
+    }, [page, limit])
 
     const createPost = (newPost) => {
         setPosts([...posts, newPost])
@@ -65,6 +66,17 @@ function Posts() {
                 filter={filter}
                 setFilter={setFilter}
             />
+            <MySelect
+                value={limit}
+                onChange={value => setLimit(value)}
+                defaultValue="Amount of items on the page"
+                options={[
+                    {value: 5, name: '5'},
+                    {value: 10, name: '10'},
+                    {value: 25, name: '25'},
+                    {value: -1, name: 'Show all'}
+                ]}
+            />
             {postError &&
             <h1 style={{display: 'flex', justifyContent: 'center'}}>An error occurred: {postError}</h1>
             }
@@ -72,7 +84,7 @@ function Posts() {
             <PostList remove={removePost} posts={sortedAndSearchedPosts} title={'JavaScript Posts'}/>
             <div ref={lastElement} style={{height: "20px"}}/>
             {isPostsLoading &&
-                <div style={{display: 'flex', justifyContent: 'center'}}><Loader/></div>
+            <div style={{display: 'flex', justifyContent: 'center'}}><Loader/></div>
             }
             <Pagination
                 page={page}
