@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useTransition} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import '../styles/App.css'
 import {usePosts} from "../hooks/usePost";
 import {useFetching} from "../hooks/useFetching";
@@ -11,6 +11,7 @@ import PostFilter from "../components/PostFilter";
 import PostList from "../components/PostList";
 import Loader from "../components/UI/Loader/Loader";
 import Pagination from "../components/UI/pagination/Pagination";
+import {useObserver} from "../hooks/useObserver";
 
 function Posts() {
     const [posts, setPosts] = useState([]);
@@ -20,13 +21,20 @@ function Posts() {
     const [limit, setLimit] = useState(10);
     const [page, setPage] = useState(1);
     const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
+    const lastElement = useRef()
+
 
     const [fetchPosts, isPostsLoading, postError] = useFetching(async () => {
         const response = await PostService.getAll(limit, page)
-        setPosts(response.data)
+        setPosts([...posts,...response.data])
         const totalCount = response.headers['x-total-count'];
         setTotalPages(getPagesCount(totalCount, limit))
     });
+
+    useObserver(lastElement, page < totalPages, isPostsLoading, () => {
+        setPage(page + 1);
+    })
+
     useEffect(() => {
         fetchPosts()
     }, [page])
@@ -58,10 +66,13 @@ function Posts() {
                 setFilter={setFilter}
             />
             {postError &&
-            <h1 style={{display: 'flex', justifyContent: 'center'}}>An error occurred: {postError}</h1>}
-            {isPostsLoading
-                ? <div style={{display: 'flex', justifyContent: 'center'}}><Loader/></div>
-                : <PostList remove={removePost} posts={sortedAndSearchedPosts} title={'JavaScript Posts'}/>
+            <h1 style={{display: 'flex', justifyContent: 'center'}}>An error occurred: {postError}</h1>
+            }
+
+            <PostList remove={removePost} posts={sortedAndSearchedPosts} title={'JavaScript Posts'}/>
+            <div ref={lastElement} style={{height: "20px"}}/>
+            {isPostsLoading &&
+                <div style={{display: 'flex', justifyContent: 'center'}}><Loader/></div>
             }
             <Pagination
                 page={page}
