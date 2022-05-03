@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useEffect, useRef, useState, useTransition} from "react";
 import '../styles/App.css'
 import {usePosts} from "../hooks/usePost";
 import {useFetching} from "../hooks/useFetching";
@@ -22,8 +22,7 @@ function Posts() {
     const [limit, setLimit] = useState(10);
     const [page, setPage] = useState(1);
     const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
-    const lastElement = useRef()
-
+    const lastElement = useRef();
 
     const [fetchPosts, isPostsLoading, postError] = useFetching(async () => {
         const response = await PostService.getAll(limit, page)
@@ -81,7 +80,7 @@ function Posts() {
             <h1 style={{display: 'flex', justifyContent: 'center'}}>An error occurred: {postError}</h1>
             }
 
-            <PostList remove={removePost} posts={sortedAndSearchedPosts} title={'JavaScript Posts'}/>
+            <PostList remove={removePost} posts={sortedAndSearchedPosts} title={'JSONPlaceholder API Posts'}/>
             <div ref={lastElement} style={{height: "20px"}}/>
             {isPostsLoading &&
             <div style={{display: 'flex', justifyContent: 'center'}}><Loader/></div>
