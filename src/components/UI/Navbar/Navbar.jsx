@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {Link} from "react-router-dom";
 import classes from './Navbar.module.css'
-import MyButton from "../button/MyButton";
+import '../../../styles/App.css'
 import {AuthContext} from "../../../context";
 
 const Navbar = () => {
@@ -13,7 +13,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className={classes.container}>
+        <div>
             <ul>
                 <li>
                     <Link className={classes.a} to="/about">About a site
@@ -32,15 +32,6 @@ const Navbar = () => {
                 </li>
             </ul>
         </div>
-        // <div className={classes.navbar}>
-        //     <MyButton onClick={logout}\>Logout</MyButton>
-        //     <div className={classes.navbar__links}>
-        //         <Link className={classes.navbar__link} to="/about">About a site</Link>
-        //     </div>
-        //     <div className={classes.navbar__links}>
-        //         <Link className={classes.navbar__link} to="/posts">Posts</Link>
-        //     </div>
-        // </div>
     );
 };
 

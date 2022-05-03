@@ -13,6 +13,7 @@ import Loader from "../components/UI/Loader/Loader";
 import Pagination from "../components/UI/pagination/Pagination";
 import {useObserver} from "../hooks/useObserver";
 import MySelect from "../components/UI/select/MySelect";
+import Navbar from "../components/UI/Navbar/Navbar";
 
 function Posts() {
     const [posts, setPosts] = useState([]);
@@ -54,6 +55,7 @@ function Posts() {
 
     return (
         <div className="App">
+            <Navbar />
             <MyButton style={{marginTop: '30px'}} onClick={() => setModal(true)}>
                 Create Post
             </MyButton>

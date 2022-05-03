@@ -3,12 +3,12 @@ import classes from './MyModal.module.css'
 
 const MyModal = ({children, visible, setVisible}) => {
 
-    const rootClasses = [classes.myModal]
-    const contentClasses = [classes.myModalContent]
+    const rootClasses = [classes.myModal];
+    const contentClasses = [classes.myModalContent];
 
     if(visible) {
         rootClasses.push(classes.active);
-        contentClasses.push(classes.active)
+        contentClasses.push(classes.active);
     }
 
     return (
