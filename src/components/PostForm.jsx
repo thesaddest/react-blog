@@ -14,21 +14,24 @@ const PostForm = ({create}) => {
         setPost({title: '', body: ''});
     }
     return (
-        <form action="">
-            <MyInput
-                value={post.title}
-                onChange={e => setPost({...post, title: e.target.value})}
-                type="text"
-                placeholder="Post title"
-            />
-            <MyInput
-                value={post.body}
-                onChange={e => setPost({...post, body: e.target.value})}
-                type="text"
-                placeholder="Post description"
-            />
-            <MyButton onClick={addNewPost}>Create post</MyButton>
-        </form>
+        <div className='form'>
+            <form action="">
+                <MyInput
+                    value={post.title}
+                    onChange={e => setPost({...post, title: e.target.value})}
+                    type="text"
+                    placeholder="Post title"
+                />
+                <MyInput
+                    value={post.body}
+                    onChange={e => setPost({...post, body: e.target.value})}
+                    type="text"
+                    placeholder="Post description"
+                />
+                <MyButton onClick={addNewPost}>Create post</MyButton>
+            </form>
+        </div>
+
     );
 };
 

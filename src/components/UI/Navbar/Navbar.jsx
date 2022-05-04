@@ -14,6 +14,7 @@ const Navbar = () => {
 
     return (
         <div>
+            <h1>{'{JSON} Placeholder API'}</h1>
             <ul>
                 <li>
                     <Link className={classes.a} to="/about">About a site
@@ -31,7 +32,6 @@ const Navbar = () => {
                     </button>
                 </li>
             </ul>
-            <hr/>
         </div>
     );
 };

@@ -4,16 +4,15 @@ import {usePosts} from "../hooks/usePost";
 import {useFetching} from "../hooks/useFetching";
 import PostService from "../API/PostService";
 import {getPagesCount} from "../utils/pages";
-import MyButton from "../components/UI/button/MyButton";
 import MyModal from "../components/UI/MyModal/MyModal";
 import PostForm from "../components/PostForm";
 import PostFilter from "../components/PostFilter";
 import PostList from "../components/PostList";
 import Loader from "../components/UI/Loader/Loader";
-import Pagination from "../components/UI/pagination/Pagination";
 import {useObserver} from "../hooks/useObserver";
 import MySelect from "../components/UI/select/MySelect";
 import Navbar from "../components/UI/Navbar/Navbar";
+import MyButton from "../components/UI/button/MyButton";
 
 function Posts() {
     const [posts, setPosts] = useState([]);
@@ -49,23 +48,14 @@ function Posts() {
         setPosts(posts.filter(p => p.id !== post.id))
     }
 
-    const changePage = (page) => {
-        setPage(page);
-    }
-
     return (
         <div className="App">
-            <Navbar />
-            <div className='createPostContainer'>
-                <button className='createPostBtn' onClick={() => setModal(true)}>
-                    Create Post
-                </button>
+            <div className='navbarContainer'>
+                <Navbar />
             </div>
-
             <MyModal visible={modal} setVisible={setModal}>
                 <PostForm create={createPost}/>
             </MyModal>
-            <hr style={{margin: '15px 0px'}}/>
             <PostFilter
                 filter={filter}
                 setFilter={setFilter}
@@ -81,20 +71,20 @@ function Posts() {
                     {value: -1, name: 'Show all'}
                 ]}
             />
+            <div className='createPostContainer'>
+                <MyButton className='createPostBtn' onClick={() => setModal(true)}>
+                    Try To Create Your Own Post !
+                </MyButton>
+            </div>
             {postError &&
             <h1 style={{display: 'flex', justifyContent: 'center'}}>An error occurred: {postError}</h1>
             }
 
-            <PostList remove={removePost} posts={sortedAndSearchedPosts} title={'JSONPlaceholder API Posts'}/>
+            <PostList remove={removePost} posts={sortedAndSearchedPosts}/>
             <div ref={lastElement} style={{height: "20px"}}/>
             {isPostsLoading &&
             <div style={{display: 'flex', justifyContent: 'center'}}><Loader/></div>
             }
-            <Pagination
-                page={page}
-                changePage={changePage}
-                totalPages={totalPages}
-            />
         </div>
     );
 }

@@ -31,7 +31,7 @@ h1 {
     cursor: pointer;
     position: relative;
     padding: 10px 20px;
-    font-size: 28px;
+    font-size: 30px;
     font-weight: 600;
     color: teal;
     border: 3px solid teal;
@@ -76,22 +76,6 @@ h1 {
     opacity: 0.01;
     transform: translateX(-100px);
     transition: all 300ms ease-in;
-}
-
-.page__wrapper {
-    margin-top: 30px;
-    display: flex;
-}
-
-.page {
-    padding: 10px;
-    border: 1px solid teal;
-    cursor: pointer;
-}
-
-.page__current {
-    border: 2px solid rgb(32, 70, 81);
-    font-weight: bold;
 }
 
 

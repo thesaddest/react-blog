@@ -29,7 +29,7 @@ const Login = () => {
                     <MyButton className='loginBtn'>Login</MyButton>
                 </form>
                 <div className='textContainer'>
-                    <p>In general, my developer <br/>
+                    <p>Actually, my developer <br/>
                     has not yet added a backend,<br/>
                     so you can enter whatever your heart desires.</p>
                 </div>
