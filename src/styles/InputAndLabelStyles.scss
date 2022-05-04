@@ -1,0 +1,46 @@
+.form {
+  position: relative;
+  width: 100%;
+}
+
+.formLabel {
+  font-size: 1.25rem;
+  font-weight: 600;
+  position: absolute;
+  left: 1rem;
+  top: 1.25rem;
+  padding: 0 0.1rem;
+  color: darkslategray;
+  cursor: text;
+  transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+  background-color: white;
+}
+
+.formInput {
+  font-size: 1.25rem;
+  top: 0;
+  left: 0;
+  border-radius: 0.5em;
+  outline: none;
+  background: none;
+
+  width: 100%;
+  padding: 1rem;
+  margin: 5px 0;
+  border: 2px solid #C0F2F3 ;
+}
+
+.formInput:hover {
+  border-color: #48CBC5;
+}
+
+.formInput:focus {
+  border-color: teal;
+}
+
+.formInput:focus ~ .formLabel,
+.formInput:not(:placeholder-shown).formInput:not(:focus) ~ .formLabel {
+  top: -0.3rem;
+  font-size: 1rem;
+  left: 0.8rem;
+}

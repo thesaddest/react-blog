@@ -5,11 +5,15 @@ import MySelect from "./UI/select/MySelect";
 const PostFilter = ({filter, setFilter}) => {
     return (
         <div>
-            <MyInput
-                value={filter.query}
-                onChange={e => setFilter({...filter, query: e.target.value})}
-                placeholder='Search...'
-            />
+            <div className='form'>
+                <MyInput
+                    value={filter.query}
+                    onChange={e => setFilter({...filter, query: e.target.value})}
+                    // placeholder='Search...'
+                />
+                <label htmlFor='password' className='formLabel'>Search...</label>
+            </div>
+
             <MySelect
                 value={filter.sort}
                 onChange={selectedSort => setFilter({...filter, sort: selectedSort})}

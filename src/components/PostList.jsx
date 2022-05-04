@@ -12,7 +12,7 @@ const PostList = ({posts, title, remove}) => {
     }
     return (
         <div>
-            <h1 style={{textAlign: 'center'}}>
+            <h1>
                 {title}
             </h1>
             <TransitionGroup>

@@ -1,0 +1,14 @@
+.mainContainer {
+    margin-top: 50px;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.textContainer {
+    padding: 20px;
+    font-size: 20px;
+}

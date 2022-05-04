@@ -2,6 +2,8 @@ import React, {useContext} from 'react';
 import MyInput from "../components/UI/input/MyInput";
 import MyButton from "../components/UI/button/MyButton";
 import {AuthContext} from "../context";
+import './pagesStyles/Login.css';
+import '../styles/InputAndLabelStyles.scss';
 
 const Login = () => {
     const {isAuth, setIsAuth} = useContext(AuthContext);
@@ -12,13 +14,28 @@ const Login = () => {
         localStorage.setItem('auth', 'true');
     }
     return (
-        <div>
+        <div className='mainContainer'>
             <h1>Login Page</h1>
-            <form onSubmit={login}>
-                    <MyInput type="text" placeholder="Enter your login"/>
-                    <MyInput type="password" placeholder="Enter your password"/>
-                <MyButton>Login</MyButton>
-            </form>
+            <div className='container'>
+                <form onSubmit={login}>
+                    <div className='form'>
+                        <MyInput type="text" id="email"/>
+                        <label htmlFor='email' className='formLabel'>Email</label>
+                    </div>
+                    <div className="form">
+                        <MyInput type="password" id='password'/>
+                        <label htmlFor='password' className='formLabel'>Password</label>
+                    </div>
+                    <MyButton className='loginBtn'>Login</MyButton>
+                </form>
+                <div className='textContainer'>
+                    <p>In general, my developer <br/>
+                    has not yet added a backend,<br/>
+                    so you can enter whatever your heart desires.</p>
+                </div>
+
+            </div>
+
         </div>
     );
 };

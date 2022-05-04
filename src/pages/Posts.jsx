@@ -56,9 +56,12 @@ function Posts() {
     return (
         <div className="App">
             <Navbar />
-            <MyButton style={{marginTop: '30px'}} onClick={() => setModal(true)}>
-                Create Post
-            </MyButton>
+            <div className='createPostContainer'>
+                <button className='createPostBtn' onClick={() => setModal(true)}>
+                    Create Post
+                </button>
+            </div>
+
             <MyModal visible={modal} setVisible={setModal}>
                 <PostForm create={createPost}/>
             </MyModal>

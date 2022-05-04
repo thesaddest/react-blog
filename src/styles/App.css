@@ -16,10 +16,38 @@
     padding: 30px;
 }
 
+h1 {
+    text-align: center;
+    margin: 10px;
+    color: teal;
+}
+
+.createPostContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.createPostBtn {
+    cursor: pointer;
+    position: relative;
+    padding: 10px 20px;
+    font-size: 28px;
+    font-weight: 600;
+    color: teal;
+    border: 3px solid teal;
+    transition: 0.4s;
+}
+
+.createPostBtn:hover {
+    color: #FFF;
+    background-color: teal;
+}
+
 .post {
     display: flex;
     padding: 15px;
     border: 2px solid teal;
+    border-radius: 16px;
     margin-top: 30px;
     justify-content: space-between;
     align-items: center;
@@ -33,14 +61,17 @@
     opacity: 0.01;
     transform: translateX(-100px);
 }
+
 .post-enter-active {
     opacity: 1;
     transform: translateX(0px);
     transition: all 300ms ease-in;
 }
+
 .post-exit {
     opacity: 1;
 }
+
 .post-exit-active {
     opacity: 0.01;
     transform: translateX(-100px);
@@ -59,9 +90,8 @@
 }
 
 .page__current {
-    border: 2px solid rgb(32,70,81);
+    border: 2px solid rgb(32, 70, 81);
     font-weight: bold;
 }
-
 
 

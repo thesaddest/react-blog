@@ -1,10 +1,9 @@
 import React from 'react';
-import classes from './MyInput.module.css'
+import '../../../styles/InputAndLabelStyles.scss';
 
 const MyInput = React.forwardRef((props, ref) => {
     return (
-
-        <input ref={ref} className={classes.myInput} {...props}/>
+            <input ref={ref} placeholder=' ' className='formInput' {...props}/>
     );
 });
 
