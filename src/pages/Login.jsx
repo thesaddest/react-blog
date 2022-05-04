@@ -25,8 +25,9 @@ const Login = () => {
                     <div className="form">
                         <MyInput type="password" id='password'/>
                         <label htmlFor='password' className='formLabel'>Password</label>
+                        <MyButton className='loginBtn'>Login</MyButton>
                     </div>
-                    <MyButton className='loginBtn'>Login</MyButton>
+
                 </form>
                 <div className='textContainer'>
                     <p>

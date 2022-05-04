@@ -9,8 +9,8 @@
   position: absolute;
   left: 1rem;
   top: 1.2rem;
-  padding: 0 0rem;
-  color: rgba(100,100,100, 0.5);
+  padding: 0;
+  color: rgba(100, 100, 100, 0.5);
   cursor: text;
   transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
   background-color: white;
@@ -27,7 +27,7 @@
   width: 100%;
   padding: 0.75rem;
   margin: 5px 0;
-  border: 2px solid #48CBC5 ;
+  border: 2px solid #48CBC5;
 }
 
 .formInput:hover {
@@ -44,4 +44,33 @@
   top: -0.3rem;
   font-size: 1rem;
   left: 0.8rem;
+}
+
+@media only screen and (max-width: 600px) {
+  form {
+    margin-top: 7px;
+  }
+
+  .formInput {
+    margin: 1px 0px 5px 0px;
+    padding: 1.5px;
+  }
+
+  .formLabel {
+    font-size: 0.8rem;
+    top: 0.5rem;
+  }
+
+  .formInput:focus ~ .formLabel,
+  .formInput:not(:placeholder-shown).formInput:not(:focus) ~ .formLabel {
+    top: -0.3rem;
+    font-size: 0.7rem;
+    left: 0.8rem;
+  }
+
+  .formAndSelectContainer {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+  }
 }

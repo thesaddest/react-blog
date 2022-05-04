@@ -4,7 +4,7 @@ import MySelect from "./UI/select/MySelect";
 
 const PostFilter = ({filter, setFilter}) => {
     return (
-        <div>
+        <div className='formAndSelectContainer'>
             <div className='form'>
                 <MyInput
                     value={filter.query}
@@ -12,16 +12,15 @@ const PostFilter = ({filter, setFilter}) => {
                 />
                 <label className='formLabel'>Search...</label>
             </div>
-
-            <MySelect
-                value={filter.sort}
-                onChange={selectedSort => setFilter({...filter, sort: selectedSort})}
-                defaultValue='Sort by'
-                options={[
-                    {value: 'title', name: 'Title'},
-                    {value: 'body', name: 'Description'},
-                ]}
-            />
+                <MySelect
+                    value={filter.sort}
+                    onChange={selectedSort => setFilter({...filter, sort: selectedSort})}
+                    defaultValue='Sort by'
+                    options={[
+                        {value: 'title', name: 'Title'},
+                        {value: 'body', name: 'Description'},
+                    ]}
+                />
         </div>
     );
 };

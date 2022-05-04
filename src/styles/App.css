@@ -59,8 +59,27 @@
 
 @media only screen and (max-width: 600px) {
     .App {
+        padding: 0;
         width: 320px;
-        align-items: center;
+    }
+    .createPostContainer {
+        margin-top: 30px;
+    }
+    .post {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .post__btns {
+        display: grid;
+        margin: 5px;
+    }
+}
+@media only screen and (min-width: 601px) {
+    .App {
+        padding-left: 40px;
+    }
+    .createPostContainer {
+        justify-content: flex-end;
     }
 }
 
