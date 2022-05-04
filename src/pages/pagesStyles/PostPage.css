@@ -1,0 +1,41 @@
+h1 {
+    color: teal;
+    padding: 10px;
+}
+
+.comments {
+    text-align: center;
+}
+
+.titleAndPostContainer {
+    text-align: center;
+}
+
+.postContainer {
+    font-size: 20px;
+    margin: 10px;
+    padding: 15px;
+    border: 2px solid teal;
+    border-radius: 16px;
+}
+
+.mainDivContainer {
+    width: 800px;
+}
+
+.parentItem {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    height: max-content;
+}
+
+.item {
+    height: 250px;
+    margin: 10px;
+    padding: 15px;
+    border: 2px solid teal;
+    border-radius: 16px;
+    flex: 1 0 30%;
+}

@@ -3,6 +3,8 @@ import {useParams} from 'react-router-dom'
 import {useFetching} from "../hooks/useFetching";
 import PostService from "../API/PostService";
 import Loader from "../components/UI/Loader/Loader";
+import './pagesStyles/PostPage.css';
+import Navbar from "../components/UI/Navbar/Navbar";
 
 const PostIdPage = () => {
     const params = useParams()
@@ -23,25 +25,31 @@ const PostIdPage = () => {
     }, [])
 
     return (
-        <div>
-            <h1>You have opened a post page with ID = {params.id}</h1>
-            {isLoading
-                ? <Loader/>
-                : <div>{post.id}. {post.title}</div>
-            }
-            <h1>
-                Comments
-            </h1>
-            {isCommentLoading
-                ? <Loader/>
-                : <div>
-                    {comments.map(comm =>
-                    <div key={comm.id} style={{marginTop: '15px'}}>
-                        <h5>{comm.email}</h5>
-                        <div>{comm.body}</div>
-                    </div>)}
-                </div>
-            }
+        <div className='mainDivContainer'>
+            <Navbar />
+            <div className='titleAndPostContainer' style={{marginTop: '0px'}}>
+                <h1>You have opened a post page with ID: {params.id}</h1>
+                {isLoading
+                    ? <Loader/>
+                    : <div className='postContainer'>{post.id}. {post.title}</div>
+                }
+            </div>
+            <div className='comments'>
+                <h1>
+                    Comments
+                </h1>
+                {isCommentLoading
+                    ? <Loader/>
+                    : <div className='parentItem'>
+                        {comments.map(comm =>
+                            <div className='item' key={comm.id} style={{marginTop: '15px'}}>
+                                <h5>{comm.email}</h5>
+                                <div>{comm.body}</div>
+                            </div>)}
+                    </div>
+                }
+            </div>
+
         </div>
     );
 };

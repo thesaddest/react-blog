@@ -9,9 +9,8 @@ const PostFilter = ({filter, setFilter}) => {
                 <MyInput
                     value={filter.query}
                     onChange={e => setFilter({...filter, query: e.target.value})}
-                    // placeholder='Search...'
                 />
-                <label htmlFor='password' className='formLabel'>Search...</label>
+                <label className='formLabel'>Search...</label>
             </div>
 
             <MySelect

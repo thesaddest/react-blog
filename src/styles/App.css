@@ -16,31 +16,10 @@
     padding: 30px;
 }
 
-h1 {
-    text-align: center;
-    margin: 10px;
-    color: teal;
-}
 
 .createPostContainer {
     display: flex;
     justify-content: center;
-}
-
-.createPostBtn {
-    cursor: pointer;
-    position: relative;
-    padding: 10px 20px;
-    font-size: 30px;
-    font-weight: 600;
-    color: teal;
-    border: 3px solid teal;
-    transition: 0.4s;
-}
-
-.createPostBtn:hover {
-    color: #FFF;
-    background-color: teal;
 }
 
 .post {
@@ -76,6 +55,13 @@ h1 {
     opacity: 0.01;
     transform: translateX(-100px);
     transition: all 300ms ease-in;
+}
+
+@media only screen and (max-width: 600px) {
+    .App {
+        width: 320px;
+        align-items: center;
+    }
 }
 
 

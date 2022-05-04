@@ -1,0 +1,56 @@
+select {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    padding: 0.5em 2em 0.5em 1.5em;
+    background: teal;
+    color: white;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+.customSelect {
+    position: absolute;
+}
+
+.customArrow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    height: 100%;
+    width: 2rem;
+    background: #064D51;
+    pointer-events: none;
+    border-radius: 10px;
+}
+
+.customArrow::before,
+.customArrow::after {
+    --size: 0.35em;
+
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.customArrow::before {
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-bottom: var(--size) solid rgba(255,255,255, 0.5);
+
+    top: 40%;
+}
+
+.customArrow::after {
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-top: var(--size) solid rgba(255,255,255, 0.5);
+
+    top: 60%;
+}

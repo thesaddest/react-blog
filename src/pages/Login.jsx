@@ -29,13 +29,13 @@ const Login = () => {
                     <MyButton className='loginBtn'>Login</MyButton>
                 </form>
                 <div className='textContainer'>
-                    <p>Actually, my developer <br/>
-                    has not yet added a backend,<br/>
-                    so you can enter whatever your heart desires.</p>
+                    <p>
+                        Actually, my developer <br/>
+                        has not added a backend yet,<br/>
+                        but you can enter whatever your heart desires.
+                    </p>
                 </div>
-
             </div>
-
         </div>
     );
 };

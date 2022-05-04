@@ -13,8 +13,8 @@ const Navbar = () => {
     }
 
     return (
-        <div>
-            <h1>{'{JSON} Placeholder API'}</h1>
+        <div className={classes.mainContainer}>
+            <a href='/posts'>{'{JSON}Placeholder API'}</a>
             <ul>
                 <li>
                     <Link className={classes.a} to="/about">About a site
