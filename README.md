@@ -23,6 +23,8 @@ It was created as a "battlefield" to practice my skills in  React.js, its hooks,
 - Hooks (useState, useEffect, useRef, useMemo, etc.) and custom Hooks
 - CSS modules, plain CSS, SCSS
 
+![](carbon.png)
+
 ### Additional features:
 
 - Preloaders
