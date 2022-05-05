@@ -32,4 +32,16 @@ It was created as a "battlefield" to practice my skills in  React.js, its hooks,
 - Responsive design
 - Animations made from scratch
 
-# You can try it here: [Link to an app](https://thesaddest.github.io/react-blog/ "Heading link")
+
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+# OR You can try it here: [Link to an app](https://thesaddest.github.io/react-blog/ "Heading link")
+
+![](https://media.giphy.com/media/sUVjpahvpALdyTU4mD/giphy.gif)
