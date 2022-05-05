@@ -45,5 +45,5 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ![](https://media.giphy.com/media/sUVjpahvpALdyTU4mD/giphy.gif)
 
-# OR You can try it here: [Link to an app](https://thesaddest.github.io/react-blog/ "Heading link")
+# OR You can try it [here](https://thesaddest.github.io/react-blog/ "Heading link")
 
