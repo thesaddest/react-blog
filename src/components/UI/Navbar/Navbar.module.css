@@ -103,9 +103,6 @@ button {
 }
 
 @media only screen and (min-width: 601px) {
-    .mainContainer {
-        align-items: center;
-    }
 
     .a {
         margin-right: 0;
@@ -130,10 +127,7 @@ button {
     }
 
     a {
+        margin-right: 30px;
         font-size: 2em;
     }
-}
-
-@media only screen and (min-width: 1200px) {
-
 }

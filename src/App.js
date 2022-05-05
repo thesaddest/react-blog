@@ -1,9 +1,8 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState} from 'react';
 import './styles/App.css';
-import {BrowserRouter} from "react-router-dom";
-import Navbar from "./components/UI/Navbar/Navbar";
-import AppRouter from "./AppRouter";
-import {AuthContext} from "./context";
+import {BrowserRouter} from 'react-router-dom';
+import AppRouter from './AppRouter';
+import {AuthContext} from './context';
 
 
 function App() {
@@ -24,7 +23,6 @@ function App() {
             isLoading
         }}>
             <BrowserRouter>
-                {/*<Navbar/>*/}
                 <AppRouter/>
             </BrowserRouter>
         </AuthContext.Provider>

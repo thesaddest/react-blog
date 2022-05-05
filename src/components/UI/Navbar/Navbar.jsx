@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import {Link} from "react-router-dom";
 import classes from './Navbar.module.css'
 import '../../../styles/App.css'
-import {AuthContext} from "../../../context";
+import {AuthContext} from '../../../context';
 
 const Navbar = () => {
     const {isAuth, setIsAuth} = useContext(AuthContext);
@@ -17,12 +17,12 @@ const Navbar = () => {
             <a href='/posts'>{'{JSON}Placeholder API'}</a>
             <ul>
                 <li>
-                    <Link className={classes.a} to="/about">About a site
+                    <Link className={classes.a} to='/about'>About a site
                         <span></span><span></span><span></span><span></span>
                     </Link>
                 </li>
                 <li>
-                    <Link className={classes.a} to="/posts">Posts
+                    <Link className={classes.a} to='/posts'>Posts
                         <span></span><span></span><span></span><span></span>
                     </Link>
                 </li>

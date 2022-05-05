@@ -1,17 +1,17 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from 'react';
 import '../styles/App.css'
-import {usePosts} from "../hooks/usePost";
-import {useFetching} from "../hooks/useFetching";
-import PostService from "../API/PostService";
-import {getPagesCount} from "../utils/pages";
-import MyModal from "../components/UI/MyModal/MyModal";
-import PostForm from "../components/PostForm";
-import PostFilter from "../components/PostFilter";
-import PostList from "../components/PostList";
-import Loader from "../components/UI/Loader/Loader";
-import {useObserver} from "../hooks/useObserver";
-import Navbar from "../components/UI/Navbar/Navbar";
-import MyButton from "../components/UI/button/MyButton";
+import {usePosts} from '../hooks/usePost';
+import {useFetching} from '../hooks/useFetching';
+import PostService from '../API/PostService';
+import {getPagesCount} from '../utils/pages';
+import MyModal from '../components/UI/MyModal/MyModal';
+import PostForm from '../components/PostForm';
+import PostFilter from '../components/PostFilter';
+import PostList from '../components/PostList';
+import Loader from '../components/UI/Loader/Loader';
+import {useObserver} from '../hooks/useObserver';
+import Navbar from '../components/UI/Navbar/Navbar';
+import MyButton from '../components/UI/button/MyButton';
 
 function Posts() {
     const [posts, setPosts] = useState([]);
@@ -48,7 +48,7 @@ function Posts() {
     }
 
     return (
-        <div className="App">
+        <div className='App'>
             <Navbar/>
             <MyModal visible={modal} setVisible={setModal}>
                 <PostForm create={createPost}/>
@@ -67,7 +67,7 @@ function Posts() {
             }
 
             <PostList remove={removePost} posts={sortedAndSearchedPosts}/>
-            <div ref={lastElement} style={{height: "20px"}}/>
+            <div ref={lastElement} style={{height: '20px'}}/>
             {isPostsLoading &&
             <div style={{display: 'flex', justifyContent: 'center'}}><Loader/></div>
             }

@@ -3,7 +3,7 @@ import preloader from './preLoader.svg'
 
 const Loader = () => {
     return (
-        <img src={preloader} alt="Loader"/>
+        <img src={preloader} alt='Loader'/>
     );
 };
 
