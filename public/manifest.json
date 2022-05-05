@@ -1,4 +1,6 @@
 {
+  "short_name": "JSONPlaceholder APP",
+  "name": "JSONPlaceholder API App",
   "icons": [
     {
       "src": "favicon.ico",
