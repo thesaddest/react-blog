@@ -4,6 +4,7 @@ import {useFetching} from '../hooks/useFetching';
 import PostService from '../API/PostService';
 import Loader from '../components/UI/Loader/Loader';
 import './pagesStyles/PostPage.css';
+import '../styles/App.css';
 import Navbar from '../components/UI/Navbar/Navbar';
 
 const PostIdPage = () => {
@@ -25,7 +26,7 @@ const PostIdPage = () => {
     }, [])
 
     return (
-        <div className='mainDivContainer'>
+        <div className='App'>
             <Navbar />
             <div className='titleAndPostContainer' style={{marginTop: '0px'}}>
                 <h1>You have opened a post page with ID: {params.id}</h1>

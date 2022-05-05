@@ -130,4 +130,8 @@ button {
         margin-right: 30px;
         font-size: 2em;
     }
+
+    li {
+        margin-right: 10px;
+    }
 }

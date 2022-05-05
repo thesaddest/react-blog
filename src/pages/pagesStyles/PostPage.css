@@ -19,10 +19,6 @@ h1 {
     border-radius: 16px;
 }
 
-.mainDivContainer {
-    width: 800px;
-}
-
 .parentItem {
     width: 100%;
     display: flex;
@@ -38,4 +34,10 @@ h1 {
     border: 2px solid teal;
     border-radius: 16px;
     flex: 1 0 30%;
+}
+
+@media only screen and (max-width: 600px)  {
+    .item {
+        font-size: 18px;
+    }
 }
